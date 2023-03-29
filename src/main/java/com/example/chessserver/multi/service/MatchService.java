@@ -35,6 +35,6 @@ public class MatchService {
     }
 
     private boolean containPlayer(String playerId) {
-        return playerList.stream().filter(player -> player.getId().equals(playerId)).findAny().isPresent();
+        return playerList.stream().anyMatch(player -> player.getId().equals(playerId));
     }
 }
