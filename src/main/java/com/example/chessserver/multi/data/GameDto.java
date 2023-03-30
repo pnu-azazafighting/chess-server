@@ -5,10 +5,10 @@ import lombok.Getter;
 
 @Getter
 public class GameDto {
-    private final String gameId;
+    private final String uuid;
 
     @Builder
-    private GameDto(String id) {
-        this.gameId = id;
+    private GameDto(String uuid) {
+        this.uuid = uuid;
     }
 }
