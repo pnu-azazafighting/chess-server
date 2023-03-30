@@ -5,9 +5,9 @@ import lombok.Getter;
 
 @Getter
 public class UserDto {
-    private final String userId;
+    private final String uuid;
     @Builder
-    private UserDto(String userId) {
-        this.userId = userId;
+    private UserDto(String uuid) {
+        this.uuid = uuid;
     }
 }
