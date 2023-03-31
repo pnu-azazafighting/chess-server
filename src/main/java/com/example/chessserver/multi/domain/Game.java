@@ -1,6 +1,6 @@
 package com.example.chessserver.multi.domain;
 
-import com.example.chessserver.user.User;
+import com.example.chessserver.user.domain.User;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
