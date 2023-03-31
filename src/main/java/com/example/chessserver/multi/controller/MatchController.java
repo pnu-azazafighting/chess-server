@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Objects;
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/matchs")
@@ -22,15 +24,15 @@ public class MatchController {
     @ApiResponse(responseCode = "200", description = "게임 매칭 성공")
     @ApiResponse(responseCode = "202", description = "아직 매칭되지 않음")
     @PostMapping
-    public ResponseEntity<GameDto> quickMatch(@RequestBody String userId) {
-        GameDto gameDto = matchService.match(userId);
-        if(gameDto.getGameId().isBlank()) {
+    public ResponseEntity<GameDto> quickMatch(@RequestBody String userUuid) {
+        GameDto gameDto = matchService.getGameUuid(userUuid);
+        if(Objects.isNull(gameDto.getUuid())) {
             return ResponseEntity
                     .status(HttpStatus.ACCEPTED).build();
         }
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .contentType(MediaType.APPLICATION_JSON)
-                .body(GameDto.builder().build());
+                .body(gameDto);
     }
 }
