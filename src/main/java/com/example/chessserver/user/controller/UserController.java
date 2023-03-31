@@ -1,6 +1,8 @@
-package com.example.chessserver.user;
+package com.example.chessserver.user.controller;
 
 import com.example.chessserver.multi.service.MatchService;
+import com.example.chessserver.user.data.UserDto;
+import com.example.chessserver.user.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
