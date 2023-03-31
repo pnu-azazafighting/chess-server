@@ -1,4 +1,4 @@
-package com.example.chessserver.user;
+package com.example.chessserver.user.domain;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

@@ -1,5 +1,6 @@
-package com.example.chessserver.user;
+package com.example.chessserver.user.repository;
 
+import com.example.chessserver.user.domain.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
