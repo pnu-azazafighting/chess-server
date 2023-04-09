@@ -1,4 +1,7 @@
 ###
 POST http://localhost:8080/matchs
+Content-Type: Application/JSON
 
-3c4911ca-08ad-49cd-82ca-df538d6da7bc
+{
+  "userId": "7660e799-1615-49ad-8ca8-9fb8f233cf04"
+}
