@@ -15,4 +15,16 @@ public class GameRepository {
         em.persist(game);
         return game.getUuid();
     }
+
+    public Game findGameByUuid(String uuid) {
+        String jpql = "SELECT g FROM Game g WHERE g.uuid = :uuid";
+        return em.createQuery(jpql, Game.class)
+                .setParameter("uuid", uuid)
+                .getSingleResult();
+    }
+
+    public void removeGame(String uuid) {
+        Game game = findGameByUuid(uuid);
+        em.remove(game);
+    }
 }
