@@ -31,7 +31,7 @@ public class MatchService {
     public GameDto getGameUuid(String playerUuid) {
         if (games.containsKey(playerUuid)) {
             return GameDto.builder()
-                    .uuid(games.get(playerUuid).getUuid())
+                    .gameId(games.get(playerUuid).getUuid())
                     .build();
         }
         return GameDto.builder().build();
@@ -58,5 +58,11 @@ public class MatchService {
                 games.put(player2.getUuid(), game);
             }
         }
+    }
+
+    public void deleteGame(String uuid) {
+        Game game = gameRepository.findGameByUuid(uuid);
+        games.remove(game.getPlayer1().getUuid());
+        games.remove(game.getPlayer2().getUuid());
     }
 }
