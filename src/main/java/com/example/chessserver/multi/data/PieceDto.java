@@ -1,5 +1,6 @@
 package com.example.chessserver.multi.data;
 
+import com.example.chessserver.multi.domain.PieceSetting;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -19,5 +20,9 @@ public class PieceDto {
         this.rook = rook;
         this.pawn = pawn;
         this.trap = trap;
+    }
+
+    public PieceSetting toPieceSetting() {
+        return new PieceSetting(king, bishop, rook, pawn, trap);
     }
 }
