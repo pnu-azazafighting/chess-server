@@ -28,7 +28,14 @@ jobs:
       with:
         java-version: '11'
         distribution: 'temurin'
-    - name: Build with Gradle
-      uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
+
+
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@v0.1.6
       with:
-        arguments: build
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.EC2_USERNAME }}
+        key: ${{ secrets.KEY }}
+        port: 22
+        script: |
+          ./run.sh
