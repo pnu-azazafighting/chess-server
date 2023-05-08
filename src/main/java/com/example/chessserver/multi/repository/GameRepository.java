@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
+import java.util.List;
 
 @Repository
 @RequiredArgsConstructor
@@ -26,5 +27,10 @@ public class GameRepository {
     public void removeGame(String uuid) {
         Game game = findGameByUuid(uuid);
         em.remove(game);
+    }
+    public void deleteAll() {
+        String jpql = "SELECT g FROM Game g";
+        List<Game> gameList = em.createQuery(jpql, Game.class).getResultList();
+        gameList.forEach(em::remove);
     }
 }
