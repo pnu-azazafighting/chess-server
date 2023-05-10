@@ -32,3 +32,4 @@ jobs:
         script: |
           ./kill.sh
           ./run.sh
+          exit
