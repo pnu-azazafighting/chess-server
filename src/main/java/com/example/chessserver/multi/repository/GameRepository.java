@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 @RequiredArgsConstructor
@@ -17,16 +18,18 @@ public class GameRepository {
         return game.getUuid();
     }
 
-    public Game findGameByUuid(String uuid) {
+    public Optional<Game> findGameByUuid(String uuid) {
         String jpql = "SELECT g FROM Game g WHERE g.uuid = :uuid";
         return em.createQuery(jpql, Game.class)
                 .setParameter("uuid", uuid)
-                .getSingleResult();
+                .getResultList().stream()
+                .findFirst();
     }
 
     public void removeGame(String uuid) {
-        Game game = findGameByUuid(uuid);
-        em.remove(game);
+        if(findGameByUuid(uuid).isPresent()){
+            em.remove(findGameByUuid(uuid).get());
+        }
     }
     public void deleteAll() {
         String jpql = "SELECT g FROM Game g";
