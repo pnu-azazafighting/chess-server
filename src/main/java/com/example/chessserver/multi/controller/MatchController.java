@@ -21,7 +21,7 @@ public class MatchController {
     private final MatchService matchService;
     @Operation(summary = "유저 아이디 입력", description = "유저 아이디 입력시 퀵 매칭 후 게임 룸 아이디를 리턴하는 api")
     @ApiResponse(responseCode = "200", description = "게임 매칭 성공")
-    @ApiResponse(responseCode = "202", description = "아직 매칭되지 않음")
+    @ApiResponse(responseCode = "204", description = "아직 매칭되지 않음")
     @PostMapping
     public ResponseEntity<GameDto> quickMatch(@RequestBody UserDto userDto) {
         GameDto gameDto = matchService.getGameUuid(userDto.getUserId());
