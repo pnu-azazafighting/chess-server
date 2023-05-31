@@ -2,6 +2,7 @@ package com.example.chessserver.multi.service;
 
 import com.example.chessserver.multi.domain.Game;
 import com.example.chessserver.multi.data.GameDto;
+import com.example.chessserver.multi.exception.NoGameException;
 import com.example.chessserver.multi.repository.GameRepository;
 import com.example.chessserver.user.domain.User;
 import com.example.chessserver.user.repository.UserRepository;
@@ -61,7 +62,7 @@ public class MatchService {
     }
 
     public void deleteGame(String uuid) {
-        Game game = gameRepository.findGameByUuid(uuid);
+        Game game = gameRepository.findGameByUuid(uuid).orElseThrow(NoGameException::new);
         games.remove(game.getPlayer1().getUuid());
         games.remove(game.getPlayer2().getUuid());
     }
