@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/multi")
+@CrossOrigin
 public class MultiGameController {
     private final MultiGameService multiGameService;
     @Operation(summary = "기물 세팅 정보 입력", description = "기물 세팅 정보 입력시에 서버에 저장하도록 요청하는 api")
