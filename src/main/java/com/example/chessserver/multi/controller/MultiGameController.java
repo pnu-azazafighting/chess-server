@@ -19,12 +19,12 @@ public class MultiGameController {
     @Operation(summary = "기물 세팅 정보 입력", description = "기물 세팅 정보 입력시에 서버에 저장하도록 요청하는 api")
     @PostMapping("/{gameId}/pieces")
     public ResponseEntity<Void> savePieceInfo(@PathVariable String gameId, @RequestBody PieceReqDto pieceReqDto) {
-        multiGameService.savePieceSetting(pieceReqDto);
+        multiGameService.savePieceSetting(gameId, pieceReqDto);
         return ResponseEntity.ok().build();
     }
     @Operation(summary = "상대방 기물 세팅 정보 요청", description = "상대방 기물 세팅 정보를 서버로부터 요청하는 api")
     @ApiResponse(responseCode = "200", description = "상대방 기물 세팅 정보 조회 성공")
-    @ApiResponse(responseCode = "202", description = "상대방 기물 세팅 정보 아직 입력되지 않음")
+    @ApiResponse(responseCode = "204", description = "상대방 기물 세팅 정보 아직 입력되지 않음")
     @GetMapping("/{gameId}/pieces")
     public ResponseEntity<PieceResDto> responsePieceInfo(@PathVariable String gameId, @RequestParam String userId) {
         PieceResDto pieceResDto = multiGameService.getPieceSetting(gameId, userId);
@@ -36,12 +36,12 @@ public class MultiGameController {
     @Operation(summary = "기물 이동 정보 입력", description = "기물 이동 정보 입력시에 서버에 저장하도록 요청하는 api")
     @PostMapping("/{gameId}/movements")
     public ResponseEntity<Void> savePieceMovement(@PathVariable String gameId, @RequestBody MoveReqDto moveReqDto) {
-        multiGameService.saveMovement(moveReqDto);
+        multiGameService.saveMovement(gameId, moveReqDto);
         return ResponseEntity.ok().build();
     }
     @Operation(summary = "상대방 이동 정보 요청", description = "상대방 기물 이동 정보를 서버로부터 요청하는 api")
     @ApiResponse(responseCode = "200", description = "상대방 기물 이동 정보 조회 성공")
-    @ApiResponse(responseCode = "202", description = "상대방 기물 이동 정보 아직 입력되지 않음")
+    @ApiResponse(responseCode = "204", description = "상대방 기물 이동 정보 아직 입력되지 않음")
     @GetMapping("/{gameId}/movements")
     public ResponseEntity<MoveResDto> responsePieceMovement(@PathVariable String gameId, @RequestParam String userId) {
         MoveResDto moveResDto = multiGameService.getMovement(gameId, userId);
