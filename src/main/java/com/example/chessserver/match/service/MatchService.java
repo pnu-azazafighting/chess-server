@@ -1,4 +1,4 @@
-package com.example.chessserver.multi.service;
+package com.example.chessserver.match.service;
 
 import com.example.chessserver.multi.data.GameDto;
 
