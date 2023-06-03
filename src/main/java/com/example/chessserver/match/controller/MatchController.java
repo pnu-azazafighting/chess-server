@@ -1,6 +1,6 @@
 package com.example.chessserver.match.controller;
 
-import com.example.chessserver.multi.data.GameDto;
+import com.example.chessserver.chess.data.GameDto;
 import com.example.chessserver.match.service.MatchServiceRouter;
 import com.example.chessserver.user.data.UserDto;
 import io.swagger.v3.oas.annotations.Operation;

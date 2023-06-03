@@ -1,6 +1,6 @@
-package com.example.chessserver.multi.data;
+package com.example.chessserver.chess.data;
 
-import com.example.chessserver.multi.domain.PieceSetting;
+import com.example.chessserver.chess.domain.PieceSetting;
 import lombok.Builder;
 import lombok.Getter;
 

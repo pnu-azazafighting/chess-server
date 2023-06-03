@@ -1,7 +1,7 @@
-package com.example.chessserver.multi.controller;
+package com.example.chessserver.chess.controller;
 
-import com.example.chessserver.multi.exception.NoContentException;
-import com.example.chessserver.multi.exception.NoGameException;
+import com.example.chessserver.chess.exception.NoContentException;
+import com.example.chessserver.chess.exception.NoGameException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;

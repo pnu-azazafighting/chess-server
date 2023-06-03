@@ -1,4 +1,4 @@
-package com.example.chessserver.multi.exception;
+package com.example.chessserver.chess.exception;
 
 public class NoGameException extends RuntimeException{
     public NoGameException() {
