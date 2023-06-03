@@ -1,6 +1,6 @@
-package com.example.chessserver.multi.controller;
+package com.example.chessserver.chess.controller;
 
-import com.example.chessserver.multi.service.TestService;
+import com.example.chessserver.chess.service.TestService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.RestController;

@@ -1,4 +1,4 @@
-package com.example.chessserver.multi.data;
+package com.example.chessserver.chess.data;
 
 import lombok.Builder;
 import lombok.Getter;

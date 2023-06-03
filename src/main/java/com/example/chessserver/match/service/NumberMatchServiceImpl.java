@@ -1,9 +1,9 @@
 package com.example.chessserver.match.service;
 
-import com.example.chessserver.multi.data.GameDto;
-import com.example.chessserver.multi.domain.Game;
-import com.example.chessserver.multi.exception.NoGameException;
-import com.example.chessserver.multi.repository.GameRepository;
+import com.example.chessserver.chess.data.GameDto;
+import com.example.chessserver.chess.domain.Game;
+import com.example.chessserver.chess.exception.NoGameException;
+import com.example.chessserver.chess.repository.GameRepository;
 import com.example.chessserver.user.domain.User;
 import com.example.chessserver.user.repository.UserRepository;
 import org.springframework.scheduling.annotation.EnableScheduling;

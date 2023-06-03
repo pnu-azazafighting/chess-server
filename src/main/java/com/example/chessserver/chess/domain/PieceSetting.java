@@ -1,6 +1,6 @@
-package com.example.chessserver.multi.domain;
+package com.example.chessserver.chess.domain;
 
-import com.example.chessserver.multi.data.PieceDto;
+import com.example.chessserver.chess.data.PieceDto;
 
 import java.util.List;
 

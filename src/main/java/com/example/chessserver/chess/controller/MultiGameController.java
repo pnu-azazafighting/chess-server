@@ -1,7 +1,7 @@
-package com.example.chessserver.multi.controller;
+package com.example.chessserver.chess.controller;
 
-import com.example.chessserver.multi.data.*;
-import com.example.chessserver.multi.service.MultiGameService;
+import com.example.chessserver.chess.data.*;
+import com.example.chessserver.chess.service.MultiGameService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import lombok.RequiredArgsConstructor;

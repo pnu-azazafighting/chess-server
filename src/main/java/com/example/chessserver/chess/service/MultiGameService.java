@@ -1,16 +1,17 @@
-package com.example.chessserver.multi.service;
+package com.example.chessserver.chess.service;
 
-import com.example.chessserver.multi.data.MoveReqDto;
-import com.example.chessserver.multi.data.MoveResDto;
-import com.example.chessserver.multi.data.PieceReqDto;
-import com.example.chessserver.multi.data.PieceResDto;
-import com.example.chessserver.multi.domain.Game;
-import com.example.chessserver.multi.domain.Piece;
-import com.example.chessserver.multi.domain.PieceMovement;
-import com.example.chessserver.multi.domain.PieceSetting;
-import com.example.chessserver.multi.exception.NoContentException;
-import com.example.chessserver.multi.exception.NoGameException;
-import com.example.chessserver.multi.repository.GameRepository;
+import com.example.chessserver.chess.data.MoveReqDto;
+import com.example.chessserver.chess.data.MoveResDto;
+import com.example.chessserver.chess.data.PieceReqDto;
+import com.example.chessserver.chess.data.PieceResDto;
+import com.example.chessserver.chess.domain.Game;
+import com.example.chessserver.chess.domain.Piece;
+import com.example.chessserver.chess.domain.PieceMovement;
+import com.example.chessserver.chess.domain.PieceSetting;
+import com.example.chessserver.chess.exception.NoContentException;
+import com.example.chessserver.chess.exception.NoGameException;
+import com.example.chessserver.chess.repository.GameRepository;
+import com.example.chessserver.match.service.MatchServiceRouter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -26,7 +27,7 @@ public class MultiGameService {
     private final Map<String, PieceMovement> movements = new HashMap<>();
     private final Map<String, PieceSetting> settings = new HashMap<>();
     private final GameRepository gameRepository;
-    private final MatchService matchService;
+    private final MatchServiceRouter matchServiceRouter;
 
     public void savePieceSetting(String gameUuid, PieceReqDto pieceReqDto) {
         settings.put(pieceReqDto.getUserId(), pieceReqDto.getPiece().toPieceSetting());
@@ -71,7 +72,7 @@ public class MultiGameService {
     }
 
     public void deleteGame(String gameUuid) {
-        matchService.deleteGame(gameUuid);
+        matchServiceRouter.getMatchServiceImpl("Chess").deleteGame(gameUuid);
         gameRepository.removeGame(gameUuid);
     }
 

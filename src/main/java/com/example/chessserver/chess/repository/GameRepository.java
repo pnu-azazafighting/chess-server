@@ -1,6 +1,6 @@
-package com.example.chessserver.multi.repository;
+package com.example.chessserver.chess.repository;
 
-import com.example.chessserver.multi.domain.Game;
+import com.example.chessserver.chess.domain.Game;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 

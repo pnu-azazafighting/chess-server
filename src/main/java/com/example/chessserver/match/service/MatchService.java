@@ -1,6 +1,6 @@
 package com.example.chessserver.match.service;
 
-import com.example.chessserver.multi.data.GameDto;
+import com.example.chessserver.chess.data.GameDto;
 
 public interface MatchService {
     boolean isAvailable(String type);
