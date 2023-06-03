@@ -23,7 +23,7 @@ import java.util.Objects;
 @Service
 @RequiredArgsConstructor
 @Transactional
-public class MultiGameService {
+public class ChessGameService {
     private final Map<String, PieceMovement> movements = new HashMap<>();
     private final Map<String, PieceSetting> settings = new HashMap<>();
     private final GameRepository gameRepository;
