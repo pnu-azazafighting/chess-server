@@ -17,6 +17,7 @@ public class ExceptionController {
                 .status(HttpStatus.NO_CONTENT)
                 .build();
     }
+
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @ExceptionHandler(NoGameException.class)
     public ResponseEntity<String> noGameExceptionHandler(NoGameException e) {

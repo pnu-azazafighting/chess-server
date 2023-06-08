@@ -16,7 +16,7 @@ import java.util.*;
 @EnableScheduling
 @Transactional
 @Service
-public class ChessMatchServiceImpl implements MatchService{
+public class ChessMatchServiceImpl implements MatchService {
     private volatile Map<String, Game> chessGames;
 
     private volatile Queue<String> chessPlayerList;
@@ -44,6 +44,7 @@ public class ChessMatchServiceImpl implements MatchService{
         }
         return GameDto.builder().build();
     }
+
     public void insertWaitingList(String uuid) {
         if (!chessGames.containsKey(uuid) && !chessPlayerList.contains(uuid))
             chessPlayerList.add(uuid);

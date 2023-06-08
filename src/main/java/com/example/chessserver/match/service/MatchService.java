@@ -4,6 +4,7 @@ import com.example.chessserver.chess.data.GameDto;
 
 public interface MatchService {
     boolean isAvailable(String type);
+
     GameDto getGameUuid(String playerUuid);
 
     void insertWaitingList(String uuid);

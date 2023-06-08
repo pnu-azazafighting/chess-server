@@ -27,10 +27,11 @@ public class GameRepository {
     }
 
     public void removeGame(String uuid) {
-        if(findGameByUuid(uuid).isPresent()){
+        if (findGameByUuid(uuid).isPresent()) {
             em.remove(findGameByUuid(uuid).get());
         }
     }
+
     public void deleteAll() {
         String jpql = "SELECT g FROM Game g";
         List<Game> gameList = em.createQuery(jpql, Game.class).getResultList();

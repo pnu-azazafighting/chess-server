@@ -39,7 +39,7 @@ public class ChessGameService {
         Game game = gameRepository.findGameByUuid(gameUuid).orElseThrow(NoGameException::new);
         String targetUuid = findOtherPlayerId(gameUuid, userUuid);
         int sequence = game.getPlayer1().getUuid().equals(userUuid) ? 1 : 2;
-        if(Objects.nonNull(settings.get(targetUuid))){
+        if (Objects.nonNull(settings.get(targetUuid))) {
             return PieceResDto.builder()
                     .piece(settings.get(targetUuid).toPieceDto())
                     .sequence(sequence).build();
@@ -47,6 +47,7 @@ public class ChessGameService {
 
         throw new NoContentException();
     }
+
     public void saveMovement(String gameUuid, MoveReqDto moveReqDto) {
         PieceMovement pieceMovement = new PieceMovement(
                 moveReqDto.getStart(),
@@ -59,7 +60,7 @@ public class ChessGameService {
 
     public MoveResDto getMovement(String gameUuid, String userUuid) {
         PieceMovement pieceMovement = movements.get(findOtherPlayerId(gameUuid, userUuid));
-        if(Objects.nonNull(pieceMovement)) {
+        if (Objects.nonNull(pieceMovement)) {
             return MoveResDto.builder()
                     .start(pieceMovement.getStart())
                     .end(pieceMovement.getEnd()).build();
@@ -75,7 +76,7 @@ public class ChessGameService {
 
     private String findOtherPlayerId(String gameUuid, String userUuid) {
         Game game = gameRepository.findGameByUuid(gameUuid).orElseThrow(NoGameException::new);
-        if(game.getPlayer1().getUuid().equals(userUuid)) {
+        if (game.getPlayer1().getUuid().equals(userUuid)) {
             return game.getPlayer2().getUuid();
         }
         return game.getPlayer1().getUuid();

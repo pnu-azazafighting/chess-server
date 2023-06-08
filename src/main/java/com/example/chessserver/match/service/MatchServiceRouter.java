@@ -12,7 +12,7 @@ public class MatchServiceRouter {
 
     public MatchService getMatchServiceImpl(String type) {
         return matchServiceList.stream()
-                .filter(m-> m.isAvailable(type))
+                .filter(m -> m.isAvailable(type))
                 .findFirst()
                 .orElseThrow(RuntimeException::new);
     }

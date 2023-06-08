@@ -3,6 +3,7 @@ package com.example.chessserver.chess.domain;
 import lombok.Getter;
 
 import java.util.List;
+
 @Getter
 public class PieceMovement {
     private final List<Integer> start;

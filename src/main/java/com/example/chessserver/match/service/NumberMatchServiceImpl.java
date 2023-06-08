@@ -12,10 +12,11 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.*;
+
 @EnableScheduling
 @Transactional
 @Service
-public class NumberMatchServiceImpl implements MatchService{
+public class NumberMatchServiceImpl implements MatchService {
     private volatile Queue<String> numberPlayerList;
     private volatile Map<String, Game> numberGames;
     private final GameRepository gameRepository;
@@ -35,6 +36,7 @@ public class NumberMatchServiceImpl implements MatchService{
 
     @Override
     public GameDto getGameUuid(String playerUuid) {
+        //TODO: 플레이어 유효성 확인 후 게임 찾아보기
         if (numberGames.containsKey(playerUuid)) {
             return GameDto.builder()
                     .gameId(numberGames.get(playerUuid).getUuid())

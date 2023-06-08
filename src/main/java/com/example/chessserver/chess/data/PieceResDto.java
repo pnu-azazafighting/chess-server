@@ -7,6 +7,7 @@ import lombok.Getter;
 public class PieceResDto {
     private final PieceDto piece;
     private final Integer sequence;
+
     @Builder
     private PieceResDto(PieceDto piece, Integer sequence) {
         this.piece = piece;
