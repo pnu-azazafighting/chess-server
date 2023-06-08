@@ -22,6 +22,7 @@ public class UserRepository {
                 .setParameter("uuid", uuid)
                 .getSingleResult();
     }
+
     public void deleteAll() {
         String jpql = "SELECT u FROM User u";
         List<User> users = em.createQuery(jpql, User.class).getResultList();

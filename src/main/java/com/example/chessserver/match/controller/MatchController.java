@@ -19,13 +19,14 @@ import java.util.Objects;
 @CrossOrigin
 public class MatchController {
     private final MatchServiceRouter matchServiceRouter;
+
     @Operation(summary = "유저 아이디 입력", description = "유저 아이디 입력시 퀵 매칭 후 게임 룸 아이디를 리턴하는 api")
     @ApiResponse(responseCode = "200", description = "게임 매칭 성공")
     @ApiResponse(responseCode = "204", description = "아직 매칭되지 않음")
     @PostMapping("chess")
     public ResponseEntity<GameDto> quickChessMatch(@RequestBody UserDto userDto) {
         GameDto gameDto = matchServiceRouter.getMatchServiceImpl("Chess").getGameUuid(userDto.getUserId());
-        if(Objects.isNull(gameDto.getGameId())) {
+        if (Objects.isNull(gameDto.getGameId())) {
             return ResponseEntity
                     .status(HttpStatus.ACCEPTED).build();
         }
@@ -34,13 +35,14 @@ public class MatchController {
                 .contentType(MediaType.APPLICATION_JSON)
                 .body(gameDto);
     }
+
     @Operation(summary = "숫자게임 유저 아이디 입력", description = "숫자게임 유저 아이디 입력시 퀵 매칭 후 게임 룸 아이디를 리턴하는 api")
     @ApiResponse(responseCode = "200", description = "게임 매칭 성공")
     @ApiResponse(responseCode = "204", description = "아직 매칭되지 않음")
     @PostMapping("/number")
     public ResponseEntity<GameDto> quickNumberMatch(@RequestBody UserDto userDto) {
         GameDto gameDto = matchServiceRouter.getMatchServiceImpl("Number").getGameUuid(userDto.getUserId());
-        if(Objects.isNull(gameDto.getGameId())) {
+        if (Objects.isNull(gameDto.getGameId())) {
             return ResponseEntity
                     .status(HttpStatus.ACCEPTED).build();
         }

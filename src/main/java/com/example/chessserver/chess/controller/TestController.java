@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class TestController {
     private final TestService testService;
+
     @DeleteMapping("test/data")
     public void deleteAllData() {
         testService.deleteAllData();

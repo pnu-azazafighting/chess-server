@@ -6,6 +6,7 @@ public enum Piece {
     ROOK,
     PAWN,
     TRAP;
+
     public static Piece toPiece(String p) {
         return Piece.valueOf(p.toUpperCase());
     }

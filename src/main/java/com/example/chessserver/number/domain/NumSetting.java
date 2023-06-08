@@ -11,6 +11,7 @@ public class NumSetting {
     public NumSetting(Map<Integer, List<Integer>> nums) {
         this.nums = nums;
     }
+
     public NumSetDto toNumSetDto() {
         return NumSetDto.builder()
                 .nums(nums)

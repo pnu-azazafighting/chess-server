@@ -7,6 +7,7 @@ import lombok.Getter;
 public class PieceReqDto {
     private final String userId;
     private final PieceDto piece;
+
     @Builder
     private PieceReqDto(String userId, PieceDto piece) {
         this.userId = userId;
