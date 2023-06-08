@@ -1,7 +1,15 @@
 ###
-POST http://localhost:8080/users
+POST http://{{domain-address}}/users/chess
 Content-Type: application/json
 
 {
  "name": "babo5"
+}
+
+###
+POST http://{{domain-address}}/users/number
+Content-Type: application/json
+
+{
+  "name": "babo5"
 }
