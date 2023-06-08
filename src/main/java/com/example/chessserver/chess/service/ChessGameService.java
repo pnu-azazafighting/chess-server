@@ -5,7 +5,6 @@ import com.example.chessserver.chess.data.MoveResDto;
 import com.example.chessserver.chess.data.PieceReqDto;
 import com.example.chessserver.chess.data.PieceResDto;
 import com.example.chessserver.chess.domain.Game;
-import com.example.chessserver.chess.domain.Piece;
 import com.example.chessserver.chess.domain.PieceMovement;
 import com.example.chessserver.chess.domain.PieceSetting;
 import com.example.chessserver.chess.exception.NoContentException;
@@ -50,7 +49,6 @@ public class ChessGameService {
     }
     public void saveMovement(String gameUuid, MoveReqDto moveReqDto) {
         PieceMovement pieceMovement = new PieceMovement(
-                Piece.toPiece(moveReqDto.getPiece()),
                 moveReqDto.getStart(),
                 moveReqDto.getEnd());
         movements.put(moveReqDto.getUserId(), pieceMovement);
@@ -63,7 +61,6 @@ public class ChessGameService {
         PieceMovement pieceMovement = movements.get(findOtherPlayerId(gameUuid, userUuid));
         if(Objects.nonNull(pieceMovement)) {
             return MoveResDto.builder()
-                    .piece(pieceMovement.getPiece().toString())
                     .start(pieceMovement.getStart())
                     .end(pieceMovement.getEnd()).build();
 
