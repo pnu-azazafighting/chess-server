@@ -13,6 +13,7 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class UserService {
     private final UserRepository userRepository;
+
     public String saveUser(String name) {
         User user = new User(name, generateUUId());
         userRepository.save(user);

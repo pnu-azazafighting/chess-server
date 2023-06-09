@@ -1,6 +1,6 @@
-package com.example.chessserver.multi.data;
+package com.example.chessserver.chess.data;
 
-import com.example.chessserver.multi.domain.PieceSetting;
+import com.example.chessserver.chess.domain.PieceSetting;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -13,6 +13,7 @@ public class PieceDto {
     private final List<Integer> rook;
     private final List<Integer> pawn;
     private final List<Integer> trap;
+
     @Builder
     private PieceDto(List<Integer> king, List<Integer> bishop, List<Integer> rook, List<Integer> pawn, List<Integer> trap) {
         this.king = king;

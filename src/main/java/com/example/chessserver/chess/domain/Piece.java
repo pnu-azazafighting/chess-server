@@ -1,4 +1,4 @@
-package com.example.chessserver.multi.domain;
+package com.example.chessserver.chess.domain;
 
 public enum Piece {
     KING,
@@ -6,6 +6,7 @@ public enum Piece {
     ROOK,
     PAWN,
     TRAP;
+
     public static Piece toPiece(String p) {
         return Piece.valueOf(p.toUpperCase());
     }

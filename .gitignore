@@ -37,3 +37,4 @@ out/
 .vscode/
 
 /src/main/resources/application.properties
+/src/test/java/com/example/chessserver/http/http-client.private.env.json

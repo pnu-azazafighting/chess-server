@@ -1,4 +1,4 @@
-package com.example.chessserver.multi.data;
+package com.example.chessserver.chess.data;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -7,6 +7,7 @@ import lombok.Getter;
 public class PieceReqDto {
     private final String userId;
     private final PieceDto piece;
+
     @Builder
     private PieceReqDto(String userId, PieceDto piece) {
         this.userId = userId;

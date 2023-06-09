@@ -1,17 +1,19 @@
-package com.example.chessserver.multi.data;
+package com.example.chessserver.chess.data;
 
 import lombok.Builder;
 import lombok.Getter;
 
 import java.util.List;
+
 @Getter
-public class MoveResDto {
-    private final String piece;
+public class MoveReqDto {
+    private final String userId;
     private final List<Integer> start;
     private final List<Integer> end;
+
     @Builder
-    private MoveResDto(String piece, List<Integer> start, List<Integer> end) {
-        this.piece = piece;
+    private MoveReqDto(String userId, List<Integer> start, List<Integer> end) {
+        this.userId = userId;
         this.start = start;
         this.end = end;
     }

@@ -1,4 +1,4 @@
-package com.example.chessserver.multi.domain;
+package com.example.chessserver.chess.domain;
 
 import com.example.chessserver.user.domain.User;
 import lombok.Getter;

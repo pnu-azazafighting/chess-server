@@ -1,7 +1,15 @@
 ###
-POST http://localhost:8080/matchs
+POST http://{{domain-address}}/matchs/chess
 Content-Type: Application/JSON
 
 {
-  "userId": "7660e799-1615-49ad-8ca8-9fb8f233cf04"
+  "userId": "4863d665-317c-48e2-957f-ffe5f5390da8"
+}
+
+###
+POST http://{{domain-address}}/matchs/number
+Content-Type: Application/JSON
+
+{
+  "userId": "4863d665-317c-48e2-957f-ffe5f5390da8"
 }

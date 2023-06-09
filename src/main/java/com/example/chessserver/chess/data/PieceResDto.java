@@ -1,4 +1,4 @@
-package com.example.chessserver.multi.data;
+package com.example.chessserver.chess.data;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -7,6 +7,7 @@ import lombok.Getter;
 public class PieceResDto {
     private final PieceDto piece;
     private final Integer sequence;
+
     @Builder
     private PieceResDto(PieceDto piece, Integer sequence) {
         this.piece = piece;
