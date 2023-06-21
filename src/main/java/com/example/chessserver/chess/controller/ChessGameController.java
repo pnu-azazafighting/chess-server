@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/multi")
+@RequestMapping("/chess")
 @CrossOrigin
 public class ChessGameController {
     private final ChessGameService chessGameService;
