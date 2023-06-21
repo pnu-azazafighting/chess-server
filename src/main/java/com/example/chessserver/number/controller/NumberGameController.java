@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/number")
-@CrossOrigin
+@CrossOrigin(origins = "*")
 public class NumberGameController {
     private final NumberGameService numberGameService;
 

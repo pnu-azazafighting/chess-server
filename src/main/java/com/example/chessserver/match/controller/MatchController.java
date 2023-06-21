@@ -16,7 +16,7 @@ import java.util.Objects;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/matchs")
-@CrossOrigin
+@CrossOrigin(origins = "*")
 public class MatchController {
     private final MatchServiceRouter matchServiceRouter;
 
