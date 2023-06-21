@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @RestControllerAdvice
-@CrossOrigin
+@CrossOrigin(origins = "*")
+
 public class ExceptionController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @ExceptionHandler(NoContentException.class)
