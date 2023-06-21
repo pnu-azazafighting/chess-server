@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 @RequestMapping("/chess")
 @CrossOrigin(origins = "*")
+
 public class ChessGameController {
     private final ChessGameService chessGameService;
 

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @RestControllerAdvice
 @CrossOrigin(origins = "*")
+
 public class ExceptionController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @ExceptionHandler(NoContentException.class)
