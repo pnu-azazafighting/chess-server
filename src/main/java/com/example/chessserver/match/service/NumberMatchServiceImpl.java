@@ -17,8 +17,8 @@ import java.util.*;
 @Transactional
 @Service
 public class NumberMatchServiceImpl implements MatchService {
-    private volatile Queue<String> numberPlayerList;
-    private volatile Map<String, Game> numberGames;
+    private static volatile Queue<String> numberPlayerList;
+    private static volatile Map<String, Game> numberGames;
     private final GameRepository gameRepository;
     private final UserRepository userRepository;
 
@@ -73,5 +73,10 @@ public class NumberMatchServiceImpl implements MatchService {
         Game game = gameRepository.findGameByUuid(uuid).orElseThrow(NoGameException::new);
         numberGames.remove(game.getPlayer1().getUuid());
         numberGames.remove(game.getPlayer2().getUuid());
+    }
+
+    public static void reset() {
+        numberPlayerList.clear();
+        numberGames.clear();
     }
 }
