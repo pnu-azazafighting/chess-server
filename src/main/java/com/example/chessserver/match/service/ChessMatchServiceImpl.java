@@ -17,9 +17,9 @@ import java.util.*;
 @Transactional
 @Service
 public class ChessMatchServiceImpl implements MatchService {
-    private static volatile Map<String, Game> chessGames;
+    private static final Map<String, Game> chessGames = new HashMap<>();
 
-    private static volatile Queue<String> chessPlayerList;
+    private static final Queue<String> chessPlayerList = new LinkedList<>();
 
     private final GameRepository gameRepository;
     private final UserRepository userRepository;
@@ -27,8 +27,6 @@ public class ChessMatchServiceImpl implements MatchService {
     public ChessMatchServiceImpl(GameRepository gameRepository, UserRepository userRepository) {
         this.gameRepository = gameRepository;
         this.userRepository = userRepository;
-        chessGames = new HashMap<>();
-        chessPlayerList = new LinkedList<>();
     }
 
     @Override

@@ -31,8 +31,8 @@ public class ChessGameService {
     public void savePieceSetting(String gameUuid, PieceReqDto pieceReqDto) {
         settings.put(pieceReqDto.getUserId(), pieceReqDto.getPiece().toPieceSetting());
 
-        String id = findOtherPlayerId(gameUuid, pieceReqDto.getUserId());
-        settings.remove(id);
+        //String id = findOtherPlayerId(gameUuid, pieceReqDto.getUserId());
+        //settings.remove(id);
     }
 
     public PieceResDto getPieceSetting(String gameUuid, String userUuid) {

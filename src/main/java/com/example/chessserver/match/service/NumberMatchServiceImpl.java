@@ -17,16 +17,14 @@ import java.util.*;
 @Transactional
 @Service
 public class NumberMatchServiceImpl implements MatchService {
-    private static volatile Queue<String> numberPlayerList;
-    private static volatile Map<String, Game> numberGames;
+    private static final Queue<String> numberPlayerList = new LinkedList<>();
+    private static final Map<String, Game> numberGames = new HashMap<>();
     private final GameRepository gameRepository;
     private final UserRepository userRepository;
 
     public NumberMatchServiceImpl(GameRepository gameRepository, UserRepository userRepository) {
         this.gameRepository = gameRepository;
         this.userRepository = userRepository;
-        numberGames = new HashMap<>();
-        numberPlayerList = new LinkedList<>();
     }
 
     @Override
