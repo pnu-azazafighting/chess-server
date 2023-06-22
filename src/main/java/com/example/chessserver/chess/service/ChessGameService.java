@@ -23,8 +23,8 @@ import java.util.Objects;
 @RequiredArgsConstructor
 @Transactional
 public class ChessGameService {
-    private final Map<String, PieceMovement> movements = new HashMap<>();
-    private final Map<String, PieceSetting> settings = new HashMap<>();
+    private static final Map<String, PieceMovement> movements = new HashMap<>();
+    private static final Map<String, PieceSetting> settings = new HashMap<>();
     private final GameRepository gameRepository;
     private final MatchServiceRouter matchServiceRouter;
 
@@ -80,6 +80,10 @@ public class ChessGameService {
             return game.getPlayer2().getUuid();
         }
         return game.getPlayer1().getUuid();
+    }
+    public static void reset() {
+        movements.clear();
+        settings.clear();
     }
 }
 

@@ -23,8 +23,8 @@ import java.util.Objects;
 @RequiredArgsConstructor
 @Transactional
 public class NumberGameService {
-    private final Map<String, PieceMovement> movements = new HashMap<>();
-    private final Map<String, NumSetting> settings = new HashMap<>(); //TODO: 세팅 값들 스케쥴러 삭제
+    private static final Map<String, PieceMovement> movements = new HashMap<>();
+    private static final Map<String, NumSetting> settings = new HashMap<>(); //TODO: 세팅 값들 스케쥴러 삭제
     private final GameRepository gameRepository;
     private final MatchServiceRouter matchServiceRouter;
 
@@ -83,4 +83,9 @@ public class NumberGameService {
         return game.getPlayer1().getUuid();
     }
     //TODO: 게임 중단 시 게임 삭제
+
+    public static void reset() {
+        settings.clear();
+        movements.clear();
+    }
 }
