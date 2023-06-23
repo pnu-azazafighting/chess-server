@@ -6,9 +6,9 @@ import java.util.List;
 import java.util.Map;
 
 public class NumSetting {
-    private final Map<Integer, List<Integer>> nums;
+    private final Map<String, List<Integer>> nums;
 
-    public NumSetting(Map<Integer, List<Integer>> nums) {
+    public NumSetting(Map<String, List<Integer>> nums) {
         this.nums = nums;
     }
 

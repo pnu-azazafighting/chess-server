@@ -9,10 +9,10 @@ import java.util.Map;
 @Getter
 public class NumSetRes {
     private final int sequence;
-    private final Map<Integer, List<Integer>> nums;
+    private final Map<String, List<Integer>> nums;
 
     @Builder
-    private NumSetRes(int sequence, Map<Integer, List<Integer>> nums) {
+    private NumSetRes(int sequence, Map<String, List<Integer>> nums) {
         this.sequence = sequence;
         this.nums = nums;
     }

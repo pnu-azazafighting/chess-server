@@ -10,10 +10,10 @@ import java.util.Map;
 @Getter
 public class NumSetDto {
     private final String userId;
-    private final Map<Integer, List<Integer>> nums;
+    private final Map<String, List<Integer>> nums;
 
     @Builder
-    private NumSetDto(String userId, Map<Integer, List<Integer>> nums) {
+    private NumSetDto(String userId, Map<String, List<Integer>> nums) {
         this.userId = userId;
         this.nums = nums;
     }
