@@ -30,3 +30,6 @@ jobs:
         script: |
           ./kill.sh
           ./run.sh
+
+#AWS 서버 내림
+#EC2 삭제 되었으므로 다시 사용시에는 호스트랑 키팸 수정하기
